@@ -61,16 +61,33 @@
             display:flex; justify-content: space-between; align-items:center;
         }
         main .center h1 {color:#fff; display:flex; flex-flow:column nowrap; justify-content: space-between;}
-        main .center h1 span {font-size:3.5rem; letter-spacing:-2.5px; padding:10px 0;}
+        main .center h1 span {color: #fff; font-size:3.5rem; letter-spacing:-2.5px; padding:10px 0;}
+        main .center h1 span:first-child {animation: top 0.5s ease both;}
+        main .center h1 span:last-child {animation: top 0.5s ease both 0.5s;}
         main .center .right {
+            animation: right 1.5s ease both;
             position:relative; right:174px; top:-100px;
         }
         main .center .right span {
             position:absolute; width:174px; height:174px;
         }
-        main .center .right span:nth-child(1) {}
+        main .center .right span:nth-child(1) {animation: rotate 20s linear alternate infinite;}
         main .center .right span:nth-child(2) {text-align:center; line-height:174px;}
         /* animation */
+        @keyframes top {
+            0% {opacity: 0; transform: translateY(0);}
+            100% {opacity: 1; transform: translateY(-50px);}
+        }
+        @keyframes right {
+            0% {opacity: 0; transform: translateX(100px);}
+            100% {opacity: 1; transform: translateX(0);}
+            /* 0% {opacity: 0; transform: translateX(0);}
+            100% {opacity: 1; transform: translateX(-100px);} */
+        }
+        @keyframes rotate {
+            0% {transform: rotate(0);}
+            100% {transform: rotate(360deg);}
+        }
     </style>
 </head>
 <body>

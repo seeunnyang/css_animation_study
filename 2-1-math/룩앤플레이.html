@@ -23,31 +23,41 @@
         main #visual #deco {position:relative; width:1200px; margin:0 auto;}
         main #visual #deco .obj {position:absolute;}
 
-        main #visual #deco .obj1 {
+        /*.obj1,3,5,6,8 rotate / .obj2,4,7,9 scale*/
+        main #visual #deco .obj1 { /* 책 뒤 효과 */
+            animation: rotate 10s linear alternate-reverse infinite;
             top:170px; left:50%; margin-left:-342px;
         }
-        main #visual #deco .obj2 {
+        main #visual #deco .obj2 { /* 왼쪽 위 별 */
+            animation: scale 1s linear alternate infinite;
             left:0; top:150px;
         }
-        main #visual #deco .obj3 {
+        main #visual #deco .obj3 { /* 왼쪽 위 탑 */
+            animation: rotate 2s linear alternate-reverse infinite;
             left:100px; top:250px;
         }
-        main #visual #deco .obj4 {
+        main #visual #deco .obj4 { /* 왼쪽 아래 별 */
+            animation: scale 1s linear alternate infinite;
             left:150px; top:350px;
         }
-        main #visual #deco .obj5 {
+        main #visual #deco .obj5 { /* 오른쪽 위 건물 */
+            animation: rotate 2s linear alternate infinite;
             right:0; top:150px;
         }
-        main #visual #deco .obj6 {
+        main #visual #deco .obj6 { /* 오른쪽 아래 돌하르방 */
+            animation: rotate 2s linear alternate-reverse infinite;
             right:200px; top:250px;
         }
-        main #visual #deco .obj7 {
+        main #visual #deco .obj7 {/* 오른쪽 위 별 */
+            animation: scale 1s linear alternate infinite;
             right:200px; top:240px;
         }
-        main #visual #deco .obj8 {
+        main #visual #deco .obj8 {/* 왼쪽 아래  건물 */
+            animation: rotate 2s linear alternate infinite;
             left:270px; top:440px;
         }
-        main #visual #deco .obj9 {
+        main #visual #deco .obj9 { /* 오른쪽 아래 별 */
+            animation: scale 1s linear alternate infinite;
             right:0; top:440px;
         }
 
@@ -69,7 +79,14 @@
         main .category a.active {background:#26bad7; color:#fff;}
 
         /* 애니메이션 */
-
+        @keyframes rotate {
+            0% {transform:rotate(0) ;}
+            100% {transform: rotate(20deg);}
+        }
+        @keyframes scale {
+            0% {transform: scale(1);}
+            100% {transform: scale(1.2);}
+        }
     </style>
 </head>
 <body>
